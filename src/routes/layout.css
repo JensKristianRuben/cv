@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  
+  --color-canvas: var(--bg);
+  --color-content: var(--fg);
+  --color-accent: var(--stroke);
+  --color-border-subtle: var(--border);
+}
+
+:root {
+  --bg: #FFFFFF;
+  --fg: #000000;
+  --stroke: #000000;
+  --border: rgba(0, 0, 0, 0.1);
+}
+
+/* Use .dark class for manual override, and also support system preference if no class is set */
+:root.dark {
+  --bg: #000000;
+  --fg: #FFFFFF;
+  --stroke: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+/* Only apply dark mode by default if the user hasn't explicitly set a preference in class */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --stroke: #FFFFFF;
+    --border: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    @apply font-sans font-light;
+    margin: 0;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  * {
+    font-weight: 100 !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tighter;
+    font-weight: 300 !important;
+  }
+
+  p, span, li, a {
+    font-weight: 200 !important;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
