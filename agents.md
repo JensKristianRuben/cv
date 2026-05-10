@@ -23,7 +23,13 @@ We use Svelte 5's reactive system exclusively.
 - Use `$effect()` for side effects (e.g., adding event listeners in `onMount`).
 - Use `$props()` for component inputs.
 
-### 2. The "Journey" System
+### 2. Internationalization (i18n)
+The project supports both Danish (DA) and English (EN).
+- **`src/lib/i18n.svelte.ts`**: Global state management using Svelte 5 runes. Import `lang` to access or toggle the current language (`lang.current`).
+- **`src/lib/translations.ts`**: The central dictionary for all text. Every new feature or content update **MUST** include translations for both 'da' and 'en'.
+- **Usage**: In components, use `$derived(translations[lang.current].your_key)` to ensure text updates immediately when the language is toggled.
+
+### 3. The "Journey" System
 The CV page uses a unique SVG-based coordinate system:
 - **`LineCanvas.svelte`**: Dynamically generates SVG paths that connect milestones. It uses `pathLength="1"` and `stroke-dashoffset` tied to scroll position to "draw" the lines as the user moves.
 - **`Milestone.svelte`**: Positioned absolutely using `top (px)` and `left (%)`. These must be children of the same container as the canvas to maintain alignment.

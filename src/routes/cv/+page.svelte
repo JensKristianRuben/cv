@@ -1,122 +1,82 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import LineCanvas from '$lib/components/LineCanvas.svelte';
 	import Milestone from '$lib/components/Milestone.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import { lang } from '$lib/i18n.svelte';
+	import { translations } from '$lib/translations';
 
-	const totalHeight = 5500;
+	const desktopHeight = 3500;
+	
+	let t = $derived(translations[lang.current].cv);
+	
+	// Responsive detection
+	let isMobile = $state(false);
+	onMount(() => {
+		const checkMobile = () => isMobile = window.innerWidth < 768;
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+		return () => window.removeEventListener('resize', checkMobile);
+	});
 
-	// Work with varying x around 25, Education with varying x around 75
-	const milestones = [
-		{
-			y: 600,
-			x: 20,
-			alignment: 'right',
-			type: 'work',
-			date: 'Jun. 2025 — Nu',
-			title: 'Studentermedhjælper',
-			summary: 'KOPL / Frontend Development & SEO',
-			details: 'Modernizing and maintaining the company website. Implementing and optimizing SEO strategies.'
-		},
-		{
-			y: 900,
-			x: 30,
-			alignment: 'right',
-			type: 'work',
-			date: 'Maj 2025 — Nu',
-			title: 'Studentermedhjælper IT',
-			summary: 'DGI Byen / Automatisering & Infrastruktur',
-			details: 'IT process improvement and automation using Logic Apps.'
-		},
-		{
-			y: 1300,
-			x: 75,
-			alignment: 'left',
-			type: 'education',
-			date: 'Jan. 2024 — Jun. 2026',
-			title: 'Datamatiker',
-			summary: 'Erhvervsakademi København',
-			details: 'AP degree in computer science. Java, HTML and modern software development.'
-		},
-		{
-			y: 1700,
-			x: 22,
-			alignment: 'right',
-			type: 'work',
-			date: 'Mar. 2025 — Aug. 2025',
-			title: 'Kundeservice assistent',
-			summary: 'føtex, Salling Group',
-			details: 'Handling customer interactions and service management.'
-		},
-		{
-			y: 2200,
-			x: 35,
-			alignment: 'right',
-			type: 'work',
-			date: 'Feb. 2023 — Jul. 2024',
-			title: 'Tegnsprogstolk',
-			summary: 'Tegnsprogstolken.dk ApS',
-			details: 'Interpreted technical communication within IT and educational programs.'
-		},
-		{
-			y: 2600,
-			x: 70,
-			alignment: 'left',
-			type: 'education',
-			date: 'Sep. 2019 — Jan. 2023',
-			title: 'Tegnsprogstolk og Oversætter',
-			summary: 'Københavns Professionshøjskole',
-			details: "Bachelor's degree in Sign Language Interpretation and Translation."
-		},
-		{
-			y: 3100,
-			x: 28,
-			alignment: 'right',
-			type: 'work',
-			date: 'Jun. 2021 — Jan. 2023',
-			title: 'Lageransat',
-			summary: 'Bilka, Salling Group',
-			details: 'Inventory management and SAP ERP operations.'
-		},
-		{
-			y: 3700,
-			x: 18,
-			alignment: 'right',
-			type: 'work',
-			date: '2018 — 2019',
-			title: 'Festival Manager',
-			summary: 'Volt',
-			details: 'Managing operations and IT infrastructure at multiple festival sites across Europe.'
-		},
-		{
-			y: 4300,
-			x: 32,
-			alignment: 'right',
-			type: 'work',
-			date: '2018 — 2019',
-			title: 'Hotel medarbejder',
-			summary: 'Skinetworks (Frankrig)',
-			details: 'Daily hotel operations and guest interaction in Huez.'
-		}
-	];
+	// Process milestones based on screen size
+	let processedMilestones = $derived.by(() => {
+		const base = t.milestones;
+		if (!isMobile) return base;
+
+		// On mobile: Work first, then Education
+		const work = base.filter(m => m.type === 'work');
+		const edu = base.filter(m => m.type === 'education');
+		
+		const sortedWork = work.map((m, i) => ({
+			...m,
+			y: 600 + (i * 280) // Shifted down to accommodate header
+		}));
+
+		const sortedEdu = edu.map((m, i) => ({
+			...m,
+			y: 600 + (work.length * 280) + 200 + (i * 280) // Space for work items + header
+		}));
+		
+		return [...sortedWork, ...sortedEdu];
+	});
+
+	let displayHeight = $derived(isMobile 
+		? 600 + (processedMilestones.length * 280) + 500 
+		: desktopHeight
+	);
+	
+	let workHeaderY = 480;
+	let eduHeaderY = $derived(isMobile ? 600 + (t.milestones.filter(m => m.type === 'work').length * 280) + 50 : 48 * 4);
 </script>
 
 <Navbar unlocked={true} />
 
 <main 
 	class="relative w-full bg-canvas overflow-x-hidden"
-	style="height: {totalHeight}px;"
+	style="height: {displayHeight}px;"
 >
 	<div class="relative w-full h-full max-w-7xl mx-auto px-12 md:px-0">
-		<LineCanvas height={totalHeight} points={milestones} />
-		<!-- Track Headers -->
-		<div class="absolute left-[15%] top-48 text-center md:left-[22%]">
-			<span class="text-[10px] uppercase tracking-[0.6em] opacity-30">Erhverv</span>
+		<LineCanvas height={displayHeight} points={processedMilestones} />
+		
+		<!-- Desktop Track Headers -->
+		<div class="hidden md:block absolute left-[22%] top-48 text-center">
+			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.workHeader}</span>
 		</div>
-		<div class="absolute right-[15%] top-48 text-center md:right-[22%]">
-			<span class="text-[10px] uppercase tracking-[0.6em] opacity-30">Uddannelse</span>
+		<div class="hidden md:block absolute right-[22%] top-48 text-center">
+			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.eduHeader}</span>
 		</div>
 
-		{#each milestones as m}
+		<!-- Mobile Track Headers (Sequential) -->
+		<div class="md:hidden absolute left-10 transition-all duration-700" style="top: {workHeaderY}px">
+			<span class="text-[10px] uppercase tracking-[0.6em] opacity-60 font-bold text-accent">{t.workHeader}</span>
+		</div>
+		
+		<div class="md:hidden absolute left-10 transition-all duration-700" style="top: {eduHeaderY}px">
+			<span class="text-[10px] uppercase tracking-[0.6em] opacity-60 font-bold text-accent">{t.eduHeader}</span>
+		</div>
+
+		{#each processedMilestones as m}
 			<Milestone {...m} />
 		{/each}
 	</div>
@@ -125,6 +85,6 @@
 	<footer 
 		class="absolute bottom-12 left-0 w-full text-center"
 	>
-		<p class="text-[9px] uppercase tracking-[0.6em] opacity-20">End of Line</p>
+		<p class="text-[9px] uppercase tracking-[0.6em] opacity-20">{t.footer}</p>
 	</footer>
 </main>
