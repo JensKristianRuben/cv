@@ -50,8 +50,8 @@
 			{/if}
 		</button>
 
-		<!-- Top Right Tools (Always Visible) -->
-		<div class="flex items-center space-x-4 md:space-x-6">
+		<!-- Top Right Tools (Desktop Only) -->
+		<div class="hidden md:flex items-center space-x-4 md:space-x-6">
 			<LanguageToggle />
 			<ThemeToggle />
 		</div>
@@ -64,15 +64,23 @@
 			class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-canvas md:hidden"
 		>
 			<div class="flex flex-col items-center space-y-12">
-				{#each links as link}
-					<a
-						href={link.href}
-						class="text-2xl uppercase tracking-[0.8em] transition-all text-content {isActive(link.href) ? 'opacity-100' : 'opacity-30'}"
-						onclick={() => (isOpen = false)}
-					>
-						{link.name}
-					</a>
-				{/each}
+				<div class="flex flex-col items-center space-y-12 mb-8">
+					{#each links as link}
+						<a
+							href={link.href}
+							class="text-2xl uppercase tracking-[0.8em] transition-all text-content {isActive(link.href) ? 'opacity-100' : 'opacity-30'}"
+							onclick={() => (isOpen = false)}
+						>
+							{link.name}
+						</a>
+					{/each}
+				</div>
+
+				<!-- Mobile Toggles -->
+				<div class="flex items-center space-x-8 pt-12 border-t border-content/10">
+					<LanguageToggle />
+					<ThemeToggle />
+				</div>
 			</div>
 		</div>
 	{/if}

@@ -30,24 +30,24 @@
 		
 		const sortedWork = work.map((m, i) => ({
 			...m,
-			y: 600 + (i * 280) // Shifted down to accommodate header
+			y: 350 + (i * 280) // Moved up from 600
 		}));
 
 		const sortedEdu = edu.map((m, i) => ({
 			...m,
-			y: 600 + (work.length * 280) + 200 + (i * 280) // Space for work items + header
+			y: 350 + (work.length * 280) + 200 + (i * 280) // Moved up accordingly
 		}));
 		
 		return [...sortedWork, ...sortedEdu];
 	});
 
 	let displayHeight = $derived(isMobile 
-		? 600 + (processedMilestones.length * 280) + 500 
+		? 350 + (processedMilestones.length * 280) + 500 
 		: desktopHeight
 	);
 	
-	let workHeaderY = 480;
-	let eduHeaderY = $derived(isMobile ? 600 + (t.milestones.filter(m => m.type === 'work').length * 280) + 50 : 48 * 4);
+	let workHeaderY = 240; // Moved up from 480
+	let eduHeaderY = $derived(isMobile ? 350 + (t.milestones.filter(m => m.type === 'work').length * 280) + 50 : 48 * 4);
 </script>
 
 <Navbar unlocked={true} />
@@ -57,7 +57,12 @@
 	style="height: {displayHeight}px;"
 >
 	<div class="relative w-full h-full max-w-7xl mx-auto px-12 md:px-0">
-		<LineCanvas height={displayHeight} points={processedMilestones} />
+		<LineCanvas 
+			height={displayHeight} 
+			points={processedMilestones} 
+			workHeaderY={isMobile ? workHeaderY + 25 : 230}
+			eduHeaderY={isMobile ? eduHeaderY + 25 : 230}
+		/>
 		
 		<!-- Desktop Track Headers -->
 		<div class="hidden md:block absolute left-[22%] top-48 text-center">

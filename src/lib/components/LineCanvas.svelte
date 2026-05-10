@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let { points = [], height = 3000 } = $props();
+	let { points = [], height = 3000, workHeaderY = 230, eduHeaderY = 230 } = $props();
 	let scrollProgress = $state(0);
 
 	/**
 	 * Generates a simple straight path connecting milestones.
 	 */
-	function generatePath(pts: any[], centerX: number, forceStraight: boolean = false) {
-		const startY = 230;
+	function generatePath(pts: any[], centerX: number, startY: number, forceStraight: boolean = false) {
 		const sortedPts = [...pts].sort((a, b) => a.y - b.y);
 		
 		const allPoints = [
@@ -31,15 +30,15 @@
 	let workPoints = $derived(points.filter((p: any) => p.type === 'work'));
 	let eduPoints = $derived(points.filter((p: any) => p.type === 'education'));
 
-	let workPathData = $derived(generatePath(workPoints, 25));
-	let eduPathData = $derived(generatePath(eduPoints, 75));
+	let workPathData = $derived(generatePath(workPoints, 25, workHeaderY));
+	let eduPathData = $derived(generatePath(eduPoints, 75, eduHeaderY));
 	
-	// Mobile: A perfectly straight path at 10% X
-	let mobilePathData = $derived(generatePath(points, 10, true));
+	// Mobile: Perfectly straight paths at 10% X
+	let mobileWorkPathData = $derived(generatePath(workPoints, 10, workHeaderY, true));
+	let mobileEduPathData = $derived(generatePath(eduPoints, 10, eduHeaderY, true));
 
 	let maxWorkY = $derived(workPoints.length > 0 ? Math.max(...workPoints.map((p: any) => p.y)) : height);
 	let maxEduY = $derived(eduPoints.length > 0 ? Math.max(...eduPoints.map((p: any) => p.y)) : height);
-	let maxMobileY = $derived(points.length > 0 ? Math.max(...points.map((p: any) => p.y)) : height);
 
 	onMount(() => {
 		const handleScroll = () => {
@@ -101,14 +100,27 @@
 
 		<!-- Mobile Path -->
 		<g class="md:hidden">
+			<!-- Work Path -->
 			<path
-				d={mobilePathData}
+				d={mobileWorkPathData}
 				fill="none"
 				stroke="currentColor"
 				stroke-width="0.2"
 				pathLength="1"
 				stroke-dasharray="1"
-				stroke-dashoffset={1 - Math.min(1, (scrollProgress * height) / maxMobileY)}
+				stroke-dashoffset={1 - Math.min(1, (scrollProgress * height) / maxWorkY)}
+				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
+			/>
+
+			<!-- Education Path -->
+			<path
+				d={mobileEduPathData}
+				fill="none"
+				stroke="currentColor"
+				stroke-width="0.2"
+				pathLength="1"
+				stroke-dasharray="1"
+				stroke-dashoffset={1 - Math.min(1, (scrollProgress * height) / maxEduY)}
 				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
 			/>
 		</g>
