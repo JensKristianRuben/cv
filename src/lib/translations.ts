@@ -119,7 +119,7 @@ export const translations = {
 					category: 'Real-time Gaming',
 					description: 'Dette projekt er en øvelse i at bruge WebSockets til at sende data til flere brugere samtidigt og skabe et live dataflow. Resultatet er et konkurrencepræget spil designet til unge mennesker, der har svært ved at aflæse et analogt ur, men elsker udfordringer. Teknisk demonstrerer det sikker og hurtig tovejs-kommunikation mellem server og klient.',
 					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
-					image: '/src/lib/assets/clockwise.png',
+					image: '/assets/clockwise.png',
 					link: 'https://clockwise-lc5r.onrender.com/',
 					animationType: 'slide-left'
 				},
@@ -128,7 +128,7 @@ export const translations = {
 					category: 'Social Simulation',
 					description: 'Jeg synes den klassiske boids simulation er ret cool, og valgte derfor at tage udgangspunkt i den til mit algoritme eksamensprojekt. Projektet undersøger social polarisering og ekkokamre ved at visualisere, hvordan radikale holdninger ændrer flokadfærd. Teknisk er løsningen optimeret med Spatial Hashing, hvilket reducerer kompleksiteten fra O(n²) til O(n) og muliggør tusindvis af agenter i realtid.',
 					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
-					image: '/src/lib/assets/opinion-boids.png',
+					image: '/assets/opinion-boids.png',
 					link: 'https://opinions-boids.vercel.app/',
 					animationType: 'slide-right'
 				},				{
@@ -296,7 +296,7 @@ export const translations = {
 					category: 'Real-time Gaming',
 					description: 'This project is an exercise in using WebSockets to broadcast data to multiple users simultaneously, creating a live data flow. I developed a competitive clock game for young people who struggle with analog clocks but love competition. Technically, it demonstrates fast, secure two-way communication between server and client.',
 					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
-					image: '/src/lib/assets/clockwise.png',
+					image: '/assets/clockwise.png',
 					link: 'https://clockwise-lc5r.onrender.com/',
 					animationType: 'slide-left'
 				},
@@ -305,7 +305,7 @@ export const translations = {
 					category: 'Social Simulation',
 					description: 'I find the classic boids simulation quite cool, so I chose it as the starting point for my algorithm exam project. The project explores social polarization and echo chambers by visualizing how radical opinions alter flock behavior. Technically, the solution is optimized with Spatial Hashing, reducing complexity from O(n²) to O(n) and enabling thousands of real-time agents.',
 					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
-					image: '/src/lib/assets/opinion-boids.png',
+					image: '/assets/opinion-boids.png',
 					link: 'https://opinions-boids.vercel.app/',
 					animationType: 'slide-right'
 				},
