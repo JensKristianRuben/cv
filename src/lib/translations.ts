@@ -18,7 +18,7 @@ export const translations = {
 					date: 'Jun. 2025 — Nu',
 					title: 'Studentermedhjælper',
 					summary: 'KOPL',
-					details: 'Medvirket til modernisering af virksomhedens hjemmeside gennem overgang fra WordPress til en custom løsning, hvilket har givet nye tekniske muligheder for forretningen. Har sideløbende arbejdet på interne projekter som intranet, procesautomatisering og andre udviklingsopgaver til støtte for virksomhedens IT-drift.'
+					details: 'Migration fra WordPress til Svelte 5. Udvikling af interne værktøjer til at understøtte processen samt implementering af AI-agenter.'
 				},
 				{
 					y: 700,
@@ -28,7 +28,7 @@ export const translations = {
 					date: 'Maj 2025 — Nu',
 					title: 'Studentermedhjælper',
 					summary: 'DGI Byen',
-					details: 'Arbejdet med automatisering af medarbejderrejsen gennem integration mellem HR-system og IDP, herunder håndtering af preboarding, onboarding og offboarding. Arbejdet med opsætning af SSO, udrulning af phishing-simuleringer samt varetaget generel IT-support af devices og brugeradministration.'
+					details: 'Automatisering af medarbejdercyklussen fra preboarding til on- og offboarding. Integration af HR- og IDP-systemer. Arbejde med Microsoft Azure-suiten, SSO-implementering og udrulning af phishing-simuleringer.'
 				},
 				{
 					y: 950,
@@ -109,6 +109,71 @@ export const translations = {
 				{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/jenskrh/' },
 				{ name: 'GitHub', href: 'https://github.com/JensKristianRuben' }
 			]
+		},
+		projects: {
+			viewProject: 'Se Projekt',
+			viewCaseStudy: 'Se Case Study',
+			items: [
+				{
+					title: 'Clockwise',
+					category: 'Real-time Gaming',
+					description: 'Dette projekt er en øvelse i at bruge WebSockets til at sende data til flere brugere samtidigt og skabe et live dataflow. Resultatet er et konkurrencepræget spil designet til unge mennesker, der har svært ved at aflæse et analogt ur, men elsker udfordringer. Teknisk demonstrerer det sikker og hurtig tovejs-kommunikation mellem server og klient.',
+					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
+					image: '/src/lib/assets/clockwise.png',
+					link: 'https://clockwise-lc5r.onrender.com/',
+					animationType: 'slide-left'
+				},
+				{
+					title: 'Opinion Boids',
+					category: 'Social Simulation',
+					description: 'Jeg synes den klassiske boids simulation er ret cool, og valgte derfor at tage udgangspunkt i den til mit algoritme eksamensprojekt. Projektet undersøger social polarisering og ekkokamre ved at visualisere, hvordan radikale holdninger ændrer flokadfærd. Teknisk er løsningen optimeret med Spatial Hashing, hvilket reducerer kompleksiteten fra O(n²) til O(n) og muliggør tusindvis af agenter i realtid.',
+					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
+					image: '/src/lib/assets/opinion-boids.png',
+					link: 'https://opinions-boids.vercel.app/',
+					animationType: 'slide-right'
+				},				{
+					title: 'HR Pipeline',
+					category: 'Automation',
+					description: 'Fuldautomatiseret medarbejderrejse fra ansøgning til onboarding.',
+					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+					animationType: 'zoom-in'
+				},
+				{
+					title: 'AI Orchestrator',
+					category: 'Artificial Intelligence',
+					description: 'Koordinering af flere AI-agenter til løsning af komplekse forretningsopgaver.',
+					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
+					animationType: '3d-unfold'
+				},
+				{
+					title: 'Cloud Audit',
+					category: 'Infrastructure',
+					description: 'Automatiseret gennemgang og optimering af cloud-ressourcer i Azure.',
+					gradient: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
+					animationType: 'diagonal'
+				},
+				{
+					title: 'Data Streamer',
+					category: 'System Architecture',
+					description: 'Håndtering af massive datamængder i realtid med lav latens.',
+					gradient: 'linear-gradient(135deg, #3b0764 0%, #4c1d95 100%)',
+					animationType: 'perspective-zoom'
+				},
+				{
+					title: 'Portfolio App',
+					category: 'Mobile Design',
+					description: 'En moderne, responsiv applikation designet til maksimal visuel effekt.',
+					gradient: 'linear-gradient(135deg, #701a75 0%, #86198f 100%)',
+					animationType: 'skew-reveal'
+				},
+				{
+					title: 'DevOps Hub',
+					category: 'Process Optimization',
+					description: 'Centraliseret styring af CI/CD pipelines og deployment-strategier.',
+					gradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
+					animationType: 'blur-focus'
+				}
+			]
 		}
 	},
 	en: {
@@ -130,7 +195,7 @@ export const translations = {
 					date: 'Jun. 2025 — Present',
 					title: 'Student Assistant',
 					summary: 'KOPL',
-					details: 'Contributed to the modernization of the company website through a transition from WordPress to a custom solution, enabling new technical business opportunities. Concurrently worked on internal projects such as an intranet, process automation, and other development tasks supporting the company\'s IT operations.'
+					details: 'Migration from WordPress to Svelte 5. Developed internal tools to support the process. Implementation of AI agents.'
 				},
 				{
 					y: 700,
@@ -140,7 +205,7 @@ export const translations = {
 					date: 'May 2025 — Present',
 					title: 'Student Assistant',
 					summary: 'DGI Byen',
-					details: 'Automated the employee journey through integration between HR systems and IDP, including managing preboarding, onboarding, and offboarding. Implemented SSO, rolled out phishing simulations, and provided general IT support for devices and user administration.'
+					details: 'Automation of the employee lifecycle from Preboarding to on- and offboarding. Integration of HR systems and IDP systems. Worked with the Microsoft Azure suite, SSO implementation, and rolled out Phishing simulations.'
 				},
 				{
 					y: 950,
@@ -203,7 +268,7 @@ export const translations = {
 					details: 'Touring various European festivals. Managed the setup and dismantling of production infrastructure.'
 				},
 				{
-					y: 2650,
+					y: 2750,
 					x: 32,
 					alignment: 'right',
 					type: 'work',
@@ -220,6 +285,72 @@ export const translations = {
 			socials: [
 				{ name: 'LinkedIn', href: 'https://www.linkedin.com/in/jenskrh/' },
 				{ name: 'GitHub', href: 'https://github.com/JensKristianRuben' }
+			]
+		},
+		projects: {
+			viewProject: 'View Project',
+			viewCaseStudy: 'View Case Study',
+			items: [
+				{
+					title: 'Clockwise',
+					category: 'Real-time Gaming',
+					description: 'This project is an exercise in using WebSockets to broadcast data to multiple users simultaneously, creating a live data flow. I developed a competitive clock game for young people who struggle with analog clocks but love competition. Technically, it demonstrates fast, secure two-way communication between server and client.',
+					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
+					image: '/src/lib/assets/clockwise.png',
+					link: 'https://clockwise-lc5r.onrender.com/',
+					animationType: 'slide-left'
+				},
+				{
+					title: 'Opinion Boids',
+					category: 'Social Simulation',
+					description: 'I find the classic boids simulation quite cool, so I chose it as the starting point for my algorithm exam project. The project explores social polarization and echo chambers by visualizing how radical opinions alter flock behavior. Technically, the solution is optimized with Spatial Hashing, reducing complexity from O(n²) to O(n) and enabling thousands of real-time agents.',
+					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
+					image: '/src/lib/assets/opinion-boids.png',
+					link: 'https://opinions-boids.vercel.app/',
+					animationType: 'slide-right'
+				},
+				{
+					title: 'HR Pipeline',
+					category: 'Automation',
+					description: 'Fully automated employee journey from application to onboarding.',
+					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
+					animationType: 'zoom-in'
+				},
+				{
+					title: 'AI Orchestrator',
+					category: 'Artificial Intelligence',
+					description: 'Coordinating multiple AI agents to solve complex business tasks.',
+					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
+					animationType: '3d-unfold'
+				},
+				{
+					title: 'Cloud Audit',
+					category: 'Infrastructure',
+					description: 'Automated review and optimization of cloud resources in Azure.',
+					gradient: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
+					animationType: 'diagonal'
+				},
+				{
+					title: 'Data Streamer',
+					category: 'System Architecture',
+					description: 'Handling massive data volumes in real-time with ultra-low latency.',
+					gradient: 'linear-gradient(135deg, #3b0764 0%, #4c1d95 100%)',
+					animationType: 'perspective-zoom'
+				},
+				{
+					title: 'Portfolio App',
+					category: 'Mobile Design',
+					description: 'A modern, responsive application designed for maximum visual impact.',
+					gradient: 'linear-gradient(135deg, #701a75 0%, #86198f 100%)',
+					animationType: 'skew-reveal'
+				},
+				{
+					title: 'DevOps Hub',
+					category: 'Process Optimization',
+					description: 'Centralized management of CI/CD pipelines and deployment strategies.',
+					gradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
+					animationType: 'blur-focus'
+				}
 			]
 		}
 	}

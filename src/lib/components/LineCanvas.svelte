@@ -48,7 +48,7 @@
 			// headPosition is the Y-coordinate on the canvas where the line "ends" 
 			// as we scroll. By adding half the viewport height, the line 
 			// will appear to "hit" milestones when they are in the center of the screen.
-			const headPosition = winScroll + (viewportHeight / 2);
+			const headPosition = winScroll + (viewportHeight * 0.2);
 			
 			// If we are at the very top, keep it at 0
 			if (winScroll <= 0) {
