@@ -132,9 +132,9 @@ export const translations = {
 					link: 'https://opinions-boids.vercel.app/',
 					animationType: 'slide-right'
 				},				{
-					title: 'HR Pipeline',
+					title: 'Medarbejderrejsen',
 					category: 'Automation',
-					description: 'Fuldautomatiseret medarbejderrejse fra ansøgning til onboarding.',
+					description: 'Integration af DGI Byens HR- og IDP-systemer med fokus på at hjemtage ejerskab og optimere governance. Ved hjælp af Azure Logic Apps er der skabt en modulær low-code løsning, der automatiserer medarbejderens livscyklus fra preboarding til offboarding. Sikkerheden er vægtet højt gennem implementering af Managed Identities og RBAC efter least-privilege-princippet.',
 					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
 					animationType: 'zoom-in'
 				},
@@ -310,9 +310,9 @@ export const translations = {
 					animationType: 'slide-right'
 				},
 				{
-					title: 'HR Pipeline',
+					title: 'The Employee Journey',
 					category: 'Automation',
-					description: 'Fully automated employee journey from application to onboarding.',
+					description: 'Integration of HR and IDP systems with a focus on internal ownership and optimized governance. Developed using Azure Logic Apps, this modular low-code solution automates the employee lifecycle from preboarding to offboarding. Security is prioritized through Managed Identities and RBAC following least-privilege principles.',
 					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
 					animationType: 'zoom-in'
 				},

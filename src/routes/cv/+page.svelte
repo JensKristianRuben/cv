@@ -48,6 +48,26 @@
 	
 	let workHeaderY = 240; // Moved up from 480
 	let eduHeaderY = $derived(isMobile ? 350 + (t.milestones.filter(m => m.type === 'work').length * 280) + 50 : 48 * 4);
+
+	// Scroll tracking for normalized progress
+	let progress = $state(0);
+	onMount(() => {
+		const handleScroll = () => {
+			const winScroll = window.scrollY;
+			const viewportHeight = window.innerHeight;
+			const offset = viewportHeight * 0.2;
+			const currentHead = winScroll + offset;
+			
+			if (winScroll < 10) {
+				progress = 0;
+			} else {
+				progress = Math.min(1, currentHead / displayHeight);
+			}
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+		handleScroll();
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
 </script>
 
 <Navbar unlocked={true} />
@@ -62,6 +82,7 @@
 			points={processedMilestones} 
 			workHeaderY={isMobile ? workHeaderY + 25 : 230}
 			eduHeaderY={isMobile ? eduHeaderY + 25 : 230}
+			{progress}
 		/>
 		
 		<!-- Desktop Track Headers -->
@@ -82,7 +103,7 @@
 		</div>
 
 		{#each processedMilestones as m}
-			<Milestone {...m} />
+			<Milestone {...m} {progress} canvasHeight={displayHeight} />
 		{/each}
 	</div>
 

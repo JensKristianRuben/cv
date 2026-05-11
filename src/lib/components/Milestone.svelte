@@ -2,8 +2,12 @@
 	import { slide } from 'svelte/transition';
 	import { Plus, Minus } from 'lucide-svelte';
 
-	let { title, date, summary, details, x, y, alignment = 'left', type = 'work' } = $props();
-	let expanded = $state(false);
+	let { title, date, summary, details, x, y, alignment = 'left', type = 'work', progress = 0, canvasHeight = 0 } = $props();
+	
+	// Exact same math as the line's growth
+	let autoExpanded = $derived((progress * canvasHeight) + 200 >= y);
+	let manualToggle = $state<boolean | null>(null);
+	let expanded = $derived(manualToggle ?? autoExpanded);
 </script>
 
 <!-- The Milestone Container -->
@@ -21,7 +25,7 @@
 		<!-- The Content Area -->
 		<div class="ml-6 md:ml-8 flex flex-col w-[calc(100vw-80px)] md:w-[300px]">
 			<button
-				onclick={() => (expanded = !expanded)}
+				onclick={() => (manualToggle = !expanded)}
 				class="group flex w-full flex-col items-start text-left cursor-pointer transition-opacity hover:opacity-70 text-content"
 			>
 				<span class="mb-1 text-[11px] uppercase tracking-[0.4em] opacity-40">{date}</span>
