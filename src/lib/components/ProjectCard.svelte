@@ -77,17 +77,17 @@
 
 <section 
 	bind:this={element}
-	class="flex min-h-[85vh] w-full items-center justify-center px-8 md:px-24"
+	class="flex min-h-[60vh] lg:min-h-[80vh] w-full items-center justify-center px-6 md:px-12 lg:px-20"
 >
 	<div 
-		class="relative flex w-full max-w-6xl flex-col items-center gap-12 md:flex-row"
+		class="relative flex w-full max-w-2xl xl:max-w-5xl flex-col items-center gap-6 lg:gap-10 md:flex-row"
 		style:opacity={opacity}
 		style:transform={transform}
 		style:filter={filter}
 		style:will-change="transform, opacity, filter"
 	>
 		<!-- Image Side -->
-		<div class="group relative aspect-[4/3] w-full overflow-hidden rounded-sm md:w-3/5">
+		<div class="group relative aspect-[4/3] w-full overflow-hidden rounded-sm md:w-1/2">
 			{#if project.image}
 				<img 
 					src={project.image} 
@@ -119,12 +119,12 @@
 		</div>
 
 		<!-- Content Side -->
-		<div class="flex flex-col items-start text-left md:w-2/5">
-			<h2 class="mb-6 text-4xl font-light uppercase tracking-[0.4em] leading-tight md:text-5xl">
+		<div class="flex flex-col items-start text-left md:w-1/2 md:pr-4">
+			<h2 class="mb-4 text-2xl font-light uppercase tracking-[0.2em] leading-tight md:text-3xl lg:text-4xl lg:mb-6 break-words overflow-wrap-anywhere">
 				{project.title}
 			</h2>
-			<div class="h-px w-24 bg-content/20 mb-8"></div>
-			<p class="text-sm leading-relaxed tracking-wider opacity-60 md:text-base">
+			<div class="h-px w-20 bg-content/20 mb-6 lg:mb-8"></div>
+			<p class="text-xs leading-relaxed tracking-wider opacity-60 md:text-sm lg:text-base">
 				{project.description}
 			</p>
 			
@@ -133,12 +133,12 @@
 					href={project.link} 
 					target="_blank" 
 					rel="noopener noreferrer"
-					class="mt-12 border border-content/20 px-8 py-3 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas"
+					class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas"
 				>
 					{labels.viewProject}
 				</a>
 			{:else}
-				<button class="mt-12 border border-content/20 px-8 py-3 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas">
+				<button class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas">
 					{labels.viewCaseStudy}
 				</button>
 			{/if}

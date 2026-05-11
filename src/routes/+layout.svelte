@@ -1,8 +1,14 @@
 <script lang="ts">
 	import { onNavigate } from '$app/navigation';
+	import { lang } from '$lib/i18n.svelte';
 	import './layout.css';
 	
 	let { children } = $props();
+
+	// Update html lang attribute when language changes
+	$effect(() => {
+		document.documentElement.lang = lang.current;
+	});
 
 	const pageOrder = ['/', '/cv', '/projects', '/contact'];
 
