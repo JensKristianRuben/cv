@@ -139,10 +139,12 @@ export const translations = {
 					animationType: 'zoom-in'
 				},
 				{
-					title: 'AI Orchestrator',
-					category: 'Artificial Intelligence',
-					description: 'Koordinering af flere AI-agenter til løsning af komplekse forretningsopgaver.',
+					title: 'KOPL website',
+					category: 'Web Development',
+					description: 'Udviklet website.',
 					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
+					image: '/assets/kopl.png',
+					link: 'https://kopl.dk/',
 					animationType: '3d-unfold'
 				},
 				{
@@ -317,10 +319,12 @@ export const translations = {
 					animationType: 'zoom-in'
 				},
 				{
-					title: 'AI Orchestrator',
-					category: 'Artificial Intelligence',
-					description: 'Coordinating multiple AI agents to solve complex business tasks.',
+					title: 'KOPL website',
+					category: 'Web Development',
+					description: 'Developed website.',
 					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
+					image: '/assets/kopl.png',
+					link: 'https://kopl.dk/',
 					animationType: '3d-unfold'
 				},
 				{
