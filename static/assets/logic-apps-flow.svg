@@ -1,0 +1,52 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background subtle grid -->
+  <defs>
+    <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" stroke-width="0.5" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#smallGrid)" />
+
+  <!-- Flow Lines -->
+  <g stroke="white" stroke-width="2" stroke-opacity="0.3" stroke-dasharray="4 4">
+    <path d="M 400 80 V 140" />
+    <path d="M 400 220 V 280" />
+    <path d="M 400 360 V 420" />
+    
+    <!-- Split -->
+    <path d="M 400 420 H 250 V 480" />
+    <path d="M 400 420 H 550 V 480" />
+  </g>
+
+  <!-- Nodes (Empty Boxes with rounded corners) -->
+  <style>
+    .node { fill: white; fill-opacity: 0.05; stroke: white; stroke-width: 1.5; stroke-opacity: 0.6; }
+    .node-header { fill: white; fill-opacity: 0.1; stroke: white; stroke-width: 1.5; stroke-opacity: 0.6; }
+  </style>
+
+  <!-- Trigger Node -->
+  <rect x="300" y="40" width="200" height="80" rx="4" class="node" />
+  <rect x="300" y="40" width="200" height="25" rx="4" class="node-header" />
+
+  <!-- Action Node 1 -->
+  <rect x="300" y="140" width="200" height="80" rx="4" class="node" />
+  <rect x="300" y="140" width="200" height="25" rx="4" class="node-header" />
+
+  <!-- Condition Node -->
+  <rect x="300" y="280" width="200" height="80" rx="4" class="node" />
+  <rect x="300" y="280" width="200" height="25" rx="4" class="node-header" />
+
+  <!-- Branch Left -->
+  <rect x="150" y="480" width="200" height="80" rx="4" class="node" />
+  <rect x="150" y="480" width="200" height="25" rx="4" class="node-header" />
+
+  <!-- Branch Right -->
+  <rect x="450" y="480" width="200" height="80" rx="4" class="node" />
+  <rect x="450" y="480" width="200" height="25" rx="4" class="node-header" />
+
+  <!-- Connector Circles -->
+  <circle cx="400" cy="140" r="4" fill="white" fill-opacity="0.8" />
+  <circle cx="400" cy="280" r="4" fill="white" fill-opacity="0.8" />
+  <circle cx="250" cy="480" r="4" fill="white" fill-opacity="0.8" />
+  <circle cx="550" cy="480" r="4" fill="white" fill-opacity="0.8" />
+</svg>
