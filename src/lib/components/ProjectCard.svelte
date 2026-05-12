@@ -87,17 +87,19 @@
 		style:will-change="transform, opacity, filter"
 	>
 		<!-- Image Side -->
-		<div class="group relative aspect-[4/3] w-full overflow-hidden rounded-sm md:w-1/2">
+		<div 
+			class="group relative aspect-[4/3] w-full overflow-hidden rounded-sm md:w-1/2"
+			style:background-image={project.title === 'Medarbejderrejsen' || project.title === 'The Employee Journey' ? project.gradient : 'none'}
+		>
 			{#if project.image}
 				<img 
 					src={project.image} 
 					alt={project.title}
-					class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+					class="h-full w-full transition-transform duration-700 group-hover:scale-105 {project.title === 'Medarbejderrejsen' || project.title === 'The Employee Journey' ? 'object-contain p-8' : 'object-cover'}"
 				/>
 			{:else}
 				<div 
-					class="h-full w-full bg-gradient-to-br transition-transform duration-700 group-hover:scale-105"
-					style:background-image={project.gradient}
+					class="h-full w-full transition-transform duration-700 group-hover:scale-105"
 				>
 					<!-- Abstract pattern placeholder -->
 					<svg class="h-full w-full opacity-20" viewBox="0 0 100 100">
@@ -128,19 +130,21 @@
 				{project.description}
 			</p>
 			
-			{#if project.link}
-				<a 
-					href={project.link} 
-					target="_blank" 
-					rel="noopener noreferrer"
-					class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas"
-				>
-					{labels.viewProject}
-				</a>
-			{:else}
-				<button class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas">
-					{labels.viewCaseStudy}
-				</button>
+			{#if !project.hideButton}
+				{#if project.link}
+					<a 
+						href={project.link} 
+						target="_blank" 
+						rel="noopener noreferrer"
+						class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas"
+					>
+						{labels.viewProject}
+					</a>
+				{:else}
+					<button class="mt-8 lg:mt-10 border border-content/20 px-6 py-2.5 text-[10px] uppercase tracking-[0.5em] transition-all hover:bg-content hover:text-canvas">
+						{labels.viewCaseStudy}
+					</button>
+				{/if}
 			{/if}
 		</div>
 	</div>
