@@ -6,7 +6,7 @@
 	let t = $derived(translations[lang.current].contact);
 </script>
 
-<Navbar unlocked={true} />
+<Navbar />
 
 <main class="flex min-h-screen flex-col items-center justify-center bg-canvas px-12 pt-32">
 	<div class="max-w-2xl w-full text-center text-content">

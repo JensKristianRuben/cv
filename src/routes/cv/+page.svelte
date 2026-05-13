@@ -70,7 +70,7 @@
 	});
 </script>
 
-<Navbar unlocked={true} />
+<Navbar />
 
 <main 
 	class="relative w-full bg-canvas overflow-x-hidden"

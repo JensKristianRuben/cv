@@ -8,7 +8,7 @@
 	let labels = $derived(translations[lang.current].projects);
 </script>
 
-<Navbar unlocked={true} />
+<Navbar />
 
 <main class="relative bg-canvas overflow-x-hidden pt-32">
 	<!-- Projects List -->

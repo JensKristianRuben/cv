@@ -7,15 +7,14 @@
 	import ThemeToggle from './ThemeToggle.svelte';
 	import LanguageToggle from './LanguageToggle.svelte';
 
-	let { unlocked = true } = $props();
 	let isOpen = $state(false);
 
 	let t = $derived(translations[lang.current].nav);
 
 	const links = $derived([
-		{ name: t.cv, href: '/cv' },
-		{ name: t.projects, href: '/projects' },
-		{ name: t.contact, href: '/contact' }
+		{ name: t.cv, href: '/cv', id: 'cv' },
+		{ name: t.projects, href: '/projects', id: 'projects' },
+		{ name: t.contact, href: '/contact', id: 'contact' }
 	]);
 
 	function isActive(href: string) {
@@ -23,13 +22,14 @@
 	}
 </script>
 
-<nav class="fixed left-0 top-0 z-40 w-full px-8 py-12 transition-opacity duration-1000 {unlocked ? 'opacity-100' : 'opacity-0 pointer-events-none'}">
+<nav class="fixed left-0 top-0 z-40 w-full px-8 py-12">
 	<div class="flex items-start justify-between">
 		<!-- Desktop Navigation (Left Aligned) -->
 		<div class="hidden md:flex flex-col space-y-4">
 			{#each links as link}
 				<a
 					href={link.href}
+					style="view-transition-name: nav-{link.id}"
 					class="text-2xl uppercase tracking-[1em] transition-all duration-300 text-content {isActive(link.href) ? 'opacity-100' : 'opacity-20 hover:opacity-50'}"
 				>
 					{link.name}
@@ -68,6 +68,7 @@
 					{#each links as link}
 						<a
 							href={link.href}
+							style="view-transition-name: nav-{link.id}-mobile"
 							class="text-2xl uppercase tracking-[0.8em] transition-all text-content {isActive(link.href) ? 'opacity-100' : 'opacity-30'}"
 							onclick={() => (isOpen = false)}
 						>

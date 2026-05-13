@@ -80,20 +80,27 @@
 }
 
 ::view-transition-old(root) {
-  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) both slide-to-left;
+  animation: 1200ms cubic-bezier(0.76, 0, 0.24, 1) both slide-to-left;
 }
 
 ::view-transition-new(root) {
-  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) both slide-from-right;
+  animation: 1200ms cubic-bezier(0.76, 0, 0.24, 1) both slide-from-right;
 }
 
 /* Backwards navigation */
 .backwards::view-transition-old(root) {
-  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) both slide-to-right;
+  animation: 1200ms cubic-bezier(0.76, 0, 0.24, 1) both slide-to-right;
 }
 
 .backwards::view-transition-new(root) {
-  animation: 600ms cubic-bezier(0.76, 0, 0.24, 1) both slide-from-left;
+  animation: 1200ms cubic-bezier(0.76, 0, 0.24, 1) both slide-from-left;
+}
+
+/* Specific timing for the nav elements transition */
+::view-transition-group(nav-cv),
+::view-transition-group(nav-projects),
+::view-transition-group(nav-contact) {
+  animation-duration: 1500ms;
 }
 
 /* Ensure the background doesn't flash white during transition in dark mode */
