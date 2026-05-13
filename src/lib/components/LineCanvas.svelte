@@ -22,8 +22,8 @@
 	let workPoints = $derived(points.filter((p: any) => p.type === 'work'));
 	let eduPoints = $derived(points.filter((p: any) => p.type === 'education'));
 
-	let workPathData = $derived(generatePath(workPoints, 25, workHeaderY));
-	let eduPathData = $derived(generatePath(eduPoints, 75, eduHeaderY));
+	let workPathData = $derived(generatePath(workPoints, 25, workHeaderY, true));
+	let eduPathData = $derived(generatePath(eduPoints, 75, eduHeaderY, true));
 	
 	let mobileWorkPathData = $derived(generatePath(workPoints, 10, workHeaderY, true));
 	let mobileEduPathData = $derived(generatePath(eduPoints, 10, eduHeaderY, true));

@@ -12,7 +12,7 @@ export const translations = {
 			milestones: [
 				{
 					y: 400,
-					x: 20,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Jun. 2025 — Nu',
@@ -22,7 +22,7 @@ export const translations = {
 				},
 				{
 					y: 700,
-					x: 30,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Maj 2025 — Nu',
@@ -42,7 +42,7 @@ export const translations = {
 				},
 				{
 					y: 1200,
-					x: 22,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Mar. 2025 — Aug. 2025',
@@ -52,7 +52,7 @@ export const translations = {
 				},
 				{
 					y: 1500,
-					x: 35,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Feb. 2023 — Jul. 2024',
@@ -62,7 +62,7 @@ export const translations = {
 				},
 				{
 					y: 1750,
-					x: 70,
+					x: 75,
 					alignment: 'left',
 					type: 'education',
 					date: 'Sep. 2019 — Jan. 2023',
@@ -72,7 +72,7 @@ export const translations = {
 				},
 				{
 					y: 2050,
-					x: 28,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Jun. 2021 — Jan. 2023',
@@ -82,7 +82,7 @@ export const translations = {
 				},
 				{
 					y: 2400,
-					x: 18,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: '2018 — 2019',
@@ -92,7 +92,7 @@ export const translations = {
 				},
 				{
 					y: 2750,
-					x: 32,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: '2018 — 2019',
@@ -114,6 +114,15 @@ export const translations = {
 			viewProject: 'Se Projekt',
 			viewCaseStudy: 'Se Case Study',
 			items: [
+				{
+					title: 'Weeks Left',
+					category: 'Life Visualization',
+					description: 'Et tankevækkende værktøj der visualiserer din resterende tid i uger. Projektet udforsker memento mori-konceptet gennem et minimalistisk interface, der hjælper dig med at perspektivere dit liv og dine prioriteter.',
+					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+					image: '/assets/timeleft.png',
+					link: 'https://weeksleft-five.vercel.app/',
+					animationType: 'fade-in'
+				},
 				{
 					title: 'Clockwise',
 					category: 'Real-time Gaming',
@@ -148,34 +157,6 @@ export const translations = {
 					image: '/assets/kopl.png',
 					link: 'https://kopl.dk/',
 					animationType: '3d-unfold'
-				},
-				{
-					title: 'Cloud Audit',
-					category: 'Infrastructure',
-					description: 'Automatiseret gennemgang og optimering af cloud-ressourcer i Azure.',
-					gradient: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
-					animationType: 'diagonal'
-				},
-				{
-					title: 'Data Streamer',
-					category: 'System Architecture',
-					description: 'Håndtering af massive datamængder i realtid med lav latens.',
-					gradient: 'linear-gradient(135deg, #3b0764 0%, #4c1d95 100%)',
-					animationType: 'perspective-zoom'
-				},
-				{
-					title: 'Portfolio App',
-					category: 'Mobile Design',
-					description: 'En moderne, responsiv applikation designet til maksimal visuel effekt.',
-					gradient: 'linear-gradient(135deg, #701a75 0%, #86198f 100%)',
-					animationType: 'skew-reveal'
-				},
-				{
-					title: 'DevOps Hub',
-					category: 'Process Optimization',
-					description: 'Centraliseret styring af CI/CD pipelines og deployment-strategier.',
-					gradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
-					animationType: 'blur-focus'
 				}
 			]
 		}
@@ -193,7 +174,7 @@ export const translations = {
 			milestones: [
 				{
 					y: 400,
-					x: 20,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Jun. 2025 — Present',
@@ -203,7 +184,7 @@ export const translations = {
 				},
 				{
 					y: 700,
-					x: 30,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'May 2025 — Present',
@@ -223,7 +204,7 @@ export const translations = {
 				},
 				{
 					y: 1200,
-					x: 22,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Mar. 2025 — Aug. 2025',
@@ -233,7 +214,7 @@ export const translations = {
 				},
 				{
 					y: 1500,
-					x: 35,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Feb. 2023 — Jul. 2024',
@@ -243,7 +224,7 @@ export const translations = {
 				},
 				{
 					y: 1750,
-					x: 70,
+					x: 75,
 					alignment: 'left',
 					type: 'education',
 					date: 'Sep. 2019 — Jan. 2023',
@@ -253,7 +234,7 @@ export const translations = {
 				},
 				{
 					y: 2050,
-					x: 28,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: 'Jun. 2021 — Jan. 2023',
@@ -263,7 +244,7 @@ export const translations = {
 				},
 				{
 					y: 2400,
-					x: 18,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: '2018 — 2019',
@@ -273,7 +254,7 @@ export const translations = {
 				},
 				{
 					y: 2750,
-					x: 32,
+					x: 25,
 					alignment: 'right',
 					type: 'work',
 					date: '2018 — 2019',
@@ -295,6 +276,15 @@ export const translations = {
 			viewProject: 'View Project',
 			viewCaseStudy: 'View Case Study',
 			items: [
+				{
+					title: 'Weeks Left',
+					category: 'Life Visualization',
+					description: 'A thought-provoking tool that visualizes your remaining time in weeks. This project explores the memento mori concept through a minimalist interface, helping you gain perspective on your life and priorities.',
+					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
+					image: '/assets/timeleft.png',
+					link: 'https://weeksleft-five.vercel.app/',
+					animationType: 'fade-in'
+				},
 				{
 					title: 'Clockwise',
 					category: 'Real-time Gaming',
@@ -330,34 +320,6 @@ export const translations = {
 					image: '/assets/kopl.png',
 					link: 'https://kopl.dk/',
 					animationType: '3d-unfold'
-				},
-				{
-					title: 'Cloud Audit',
-					category: 'Infrastructure',
-					description: 'Automated review and optimization of cloud resources in Azure.',
-					gradient: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)',
-					animationType: 'diagonal'
-				},
-				{
-					title: 'Data Streamer',
-					category: 'System Architecture',
-					description: 'Handling massive data volumes in real-time with ultra-low latency.',
-					gradient: 'linear-gradient(135deg, #3b0764 0%, #4c1d95 100%)',
-					animationType: 'perspective-zoom'
-				},
-				{
-					title: 'Portfolio App',
-					category: 'Mobile Design',
-					description: 'A modern, responsive application designed for maximum visual impact.',
-					gradient: 'linear-gradient(135deg, #701a75 0%, #86198f 100%)',
-					animationType: 'skew-reveal'
-				},
-				{
-					title: 'DevOps Hub',
-					category: 'Process Optimization',
-					description: 'Centralized management of CI/CD pipelines and deployment strategies.',
-					gradient: 'linear-gradient(135deg, #0c4a6e 0%, #075985 100%)',
-					animationType: 'blur-focus'
 				}
 			]
 		}

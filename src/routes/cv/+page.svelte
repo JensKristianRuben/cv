@@ -30,24 +30,24 @@
 		
 		const sortedWork = work.map((m, i) => ({
 			...m,
-			y: 350 + (i * 280) // Moved up from 600
+			y: 350 + (i * 450) // Increased from 280
 		}));
 
 		const sortedEdu = edu.map((m, i) => ({
 			...m,
-			y: 350 + (work.length * 280) + 200 + (i * 280) // Moved up accordingly
+			y: 350 + (work.length * 450) + 200 + (i * 450) // Increased from 280
 		}));
 		
 		return [...sortedWork, ...sortedEdu];
 	});
 
 	let displayHeight = $derived(isMobile 
-		? 350 + (processedMilestones.length * 280) + 500 
+		? 350 + (processedMilestones.length * 450) + 500 
 		: desktopHeight
 	);
 	
-	let workHeaderY = 240; // Moved up from 480
-	let eduHeaderY = $derived(isMobile ? 350 + (t.milestones.filter(m => m.type === 'work').length * 280) + 50 : 48 * 4);
+	let workHeaderY = 180; // Moved up from 240
+	let eduHeaderY = $derived(isMobile ? 350 + (t.milestones.filter(m => m.type === 'work').length * 450) - 20 : 48 * 4);
 
 	// Scroll tracking for normalized progress
 	let progress = $state(0);
@@ -80,16 +80,16 @@
 		<LineCanvas 
 			height={displayHeight} 
 			points={processedMilestones} 
-			workHeaderY={isMobile ? workHeaderY + 25 : 230}
-			eduHeaderY={isMobile ? eduHeaderY + 25 : 230}
+			workHeaderY={isMobile ? workHeaderY + 25 : 160}
+			eduHeaderY={isMobile ? eduHeaderY + 25 : 160}
 			{progress}
 		/>
 		
 		<!-- Desktop Track Headers -->
-		<div class="hidden md:block absolute left-[22%] top-48 text-center">
+		<div class="hidden md:block absolute left-[25%] top-32 text-center -translate-x-1/2">
 			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.workHeader}</span>
 		</div>
-		<div class="hidden md:block absolute right-[22%] top-48 text-center">
+		<div class="hidden md:block absolute right-[25%] top-32 text-center translate-x-1/2">
 			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.eduHeader}</span>
 		</div>
 
