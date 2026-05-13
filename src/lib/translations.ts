@@ -1,5 +1,15 @@
 export const translations = {
 	da: {
+		seo: {
+			homeTitle: 'Jens Kristian Ruben | Datamatiker med fokus på automatisering, udvikling og devops',
+			homeDesc: 'Portfolio for Jens Kristian Ruben. Datamatiker med fokus på automatisering, udvikling og devops. Se mine projekter og erhvervserfaring her.',
+			cvTitle: 'CV & Erfaring | Jens Kristian Ruben',
+			cvDesc: 'Se min erhvervserfaring og uddannelse. Fra tegnsprogstolkning til softwareudvikling og IT-automatisering.',
+			projectsTitle: 'Projekter | Portfolio',
+			projectsDesc: 'Udforsk mine softwareprojekter, herunder Weeks Left, Clockwise og simulationer udviklet med Svelte og WebSockets.',
+			contactTitle: 'Kontakt | Jens Kristian Ruben',
+			contactDesc: 'Kontakt mig for samarbejde eller spørgsmål. Find mine sociale profiler og direkte mail her.'
+		},
 		nav: {
 			cv: 'CV',
 			projects: 'Projekter',
@@ -162,6 +172,16 @@ export const translations = {
 		}
 	},
 	en: {
+		seo: {
+			homeTitle: 'Jens Kristian Ruben | Computer Scientist focused on automation, development and devops',
+			homeDesc: 'Portfolio of Jens Kristian Ruben. Computer Science student focused on automation, development and devops. Explore my projects and professional experience.',
+			cvTitle: 'CV & Experience | Jens Kristian Ruben',
+			cvDesc: 'Explore my professional background and education. From sign language interpretation to software development and IT automation.',
+			projectsTitle: 'Projects | Portfolio',
+			projectsDesc: 'Explore my software projects, including Weeks Left, Clockwise, and simulations built with Svelte and WebSockets.',
+			contactTitle: 'Contact | Jens Kristian Ruben',
+			contactDesc: 'Get in touch for collaborations or inquiries. Find my social profiles and direct email here.'
+		},
 		nav: {
 			cv: 'CV',
 			projects: 'Projects',

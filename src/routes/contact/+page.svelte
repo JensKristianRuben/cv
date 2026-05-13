@@ -4,7 +4,13 @@
 	import { translations } from '$lib/translations';
 
 	let t = $derived(translations[lang.current].contact);
+	let seo = $derived(translations[lang.current].seo);
 </script>
+
+<svelte:head>
+	<title>{seo.contactTitle}</title>
+	<meta name="description" content={seo.contactDesc} />
+</svelte:head>
 
 <Navbar />
 

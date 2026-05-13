@@ -6,7 +6,13 @@
 
 	let t = $derived(translations[lang.current].projects.items);
 	let labels = $derived(translations[lang.current].projects);
+	let seo = $derived(translations[lang.current].seo);
 </script>
+
+<svelte:head>
+	<title>{seo.projectsTitle}</title>
+	<meta name="description" content={seo.projectsDesc} />
+</svelte:head>
 
 <Navbar />
 

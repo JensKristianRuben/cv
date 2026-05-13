@@ -9,6 +9,7 @@
 	const desktopHeight = 3500;
 	
 	let t = $derived(translations[lang.current].cv);
+	let seo = $derived(translations[lang.current].seo);
 	
 	// Responsive detection
 	let isMobile = $state(false);
@@ -80,6 +81,11 @@
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
 </script>
+
+<svelte:head>
+	<title>{seo.cvTitle}</title>
+	<meta name="description" content={seo.cvDesc} />
+</svelte:head>
 
 <Navbar />
 

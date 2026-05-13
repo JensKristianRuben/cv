@@ -18,7 +18,14 @@
 		{ name: t.projects, href: '/projects', id: 'projects' },
 		{ name: t.contact, href: '/contact', id: 'contact' }
 	]);
+
+	let seo = $derived(translations[lang.current].seo);
 </script>
+
+<svelte:head>
+	<title>{seo.homeTitle}</title>
+	<meta name="description" content={seo.homeDesc} />
+</svelte:head>
 
 <main class="fixed inset-0 flex flex-col items-center justify-center bg-canvas p-8">
 	<!-- Tools in top right -->
