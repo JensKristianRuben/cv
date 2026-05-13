@@ -170,7 +170,7 @@ export const translations = {
 		cv: {
 			workHeader: 'Experience',
 			eduHeader: 'Education',
-			footer: 'End of Line',
+			footer: 'End of Transmission',
 			milestones: [
 				{
 					y: 400,
