@@ -3,7 +3,7 @@
 
 	function generatePath(pts: any[], centerX: number, startY: number, forceStraight: boolean = false) {
 		const sortedPts = [...pts].sort((a, b) => a.y - b.y);
-		const pathStartY = Math.min(startY, sortedPts[0]?.y - 50 || startY);
+		const pathStartY = startY;
 
 		const allPoints = [
 			{ x: centerX, y: pathStartY },
@@ -47,20 +47,18 @@
 				fill="none"
 				stroke="currentColor"
 				stroke-width="0.2"
-				pathLength={maxWorkY}
 				stroke-dasharray={maxWorkY}
 				stroke-dashoffset={Math.max(0, maxWorkY - (progress * height))}
-				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
+				class="text-content/10"
 			/>
 			<path
 				d={eduPathData}
 				fill="none"
 				stroke="currentColor"
 				stroke-width="0.2"
-				pathLength={maxEduY}
 				stroke-dasharray={maxEduY}
 				stroke-dashoffset={Math.max(0, maxEduY - (progress * height))}
-				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
+				class="text-content/10"
 			/>
 		</g>
 
@@ -71,20 +69,18 @@
 				fill="none"
 				stroke="currentColor"
 				stroke-width="0.2"
-				pathLength={maxWorkY}
 				stroke-dasharray={maxWorkY}
 				stroke-dashoffset={Math.max(0, maxWorkY - (progress * height))}
-				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
+				class="text-content/10"
 			/>
 			<path
 				d={mobileEduPathData}
 				fill="none"
 				stroke="currentColor"
 				stroke-width="0.2"
-				pathLength={maxEduY}
 				stroke-dasharray={maxEduY}
 				stroke-dashoffset={Math.max(0, maxEduY - (progress * height))}
-				class="text-content/10 transition-[stroke-dashoffset] duration-300 ease-out"
+				class="text-content/10"
 			/>
 		</g>
 	</svg>

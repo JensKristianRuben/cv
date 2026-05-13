@@ -51,15 +51,26 @@
 
 	// Scroll tracking for normalized progress
 	let progress = $state(0);
+	let currentHead = $state(0);
 	onMount(() => {
 		const handleScroll = () => {
 			const winScroll = window.scrollY;
 			const viewportHeight = window.innerHeight;
-			const offset = viewportHeight * 0.2;
-			const currentHead = winScroll + offset;
-			
-			if (winScroll < 10) {
+
+			// Target offset is middle of screen (0.5)
+			const targetOffset = viewportHeight * 0.5;
+
+			// Smoothly transition the offset from 0 to targetOffset over the first 300px of scroll
+			// This prevents the "jump" at the start.
+			const entryDistance = 300;
+			const transitionFactor = Math.min(1, winScroll / entryDistance);
+			const dynamicOffset = targetOffset * transitionFactor;
+
+			currentHead = winScroll + dynamicOffset;
+
+			if (winScroll < 5) {
 				progress = 0;
+				currentHead = 0;
 			} else {
 				progress = Math.min(1, currentHead / displayHeight);
 			}
@@ -103,7 +114,7 @@
 		</div>
 
 		{#each processedMilestones as m}
-			<Milestone {...m} {progress} canvasHeight={displayHeight} />
+			<Milestone {...m} {currentHead} />
 		{/each}
 	</div>
 
