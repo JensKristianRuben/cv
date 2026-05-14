@@ -2,6 +2,7 @@
   "ci": {
     "collect": {
       "startServerCommand": "npm run preview",
+      "startServerReadyPattern": "listen|ready",
       "url": [
         "http://localhost:4173/",
         "http://localhost:4173/projects",
@@ -9,10 +10,6 @@
         "http://localhost:4173/contact"
       ],
       "numberOfRuns": 2
-    },
-    "assert": {
-      "assertions": {
-      }
     },
     "upload": {
       "target": "temporary-public-storage"
