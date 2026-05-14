@@ -30,9 +30,11 @@ The project supports both Danish (DA) and English (EN).
 - **Usage**: In components, use `$derived(translations[lang.current].your_key)` to ensure text updates immediately when the language is toggled.
 
 ### 3. The "Journey" System
-The CV page uses a unique SVG-based coordinate system:
-- **`LineCanvas.svelte`**: Dynamically generates SVG paths that connect milestones. It uses `pathLength="1"` and `stroke-dashoffset` tied to scroll position to "draw" the lines as the user moves.
-- **`Milestone.svelte`**: Positioned absolutely using `top (px)` and `left (%)`. These must be children of the same container as the canvas to maintain alignment.
+The CV page uses a modern, scroll-snapping layout:
+- **Scroll Snap**: The page uses `snap-y snap-mandatory` to ensure each milestone is centered in the viewport.
+- **Milestone Component**: Each milestone is a full-viewport section (`min-h-screen`). It uses CSS Grid to align content: Work on the left, Education on the right.
+- **Animations**: Staggered fade-in animations are triggered via Intersection Observer when a milestone enters the viewport.
+- **Central Line**: A fixed background line grows as the user scrolls, providing a visual timeline.
 
 ## Development Standards (Do's and Don'ts)
 

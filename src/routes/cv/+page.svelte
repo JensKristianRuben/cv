@@ -1,86 +1,49 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import LineCanvas from '$lib/components/LineCanvas.svelte';
 	import Milestone from '$lib/components/Milestone.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
 	import { lang } from '$lib/i18n.svelte';
 	import { translations } from '$lib/translations';
 
-	const desktopHeight = 3500;
-	
 	let t = $derived(translations[lang.current].cv);
 	let seo = $derived(translations[lang.current].seo);
 	
-	// Responsive detection
-	let isMobile = $state(false);
-	onMount(() => {
-		const checkMobile = () => isMobile = window.innerWidth < 768;
-		checkMobile();
-		window.addEventListener('resize', checkMobile);
-		return () => window.removeEventListener('resize', checkMobile);
-	});
-
-	// Process milestones based on screen size
-	let processedMilestones = $derived.by(() => {
-		const base = t.milestones;
-		if (!isMobile) return base;
-
-		// On mobile: Work first, then Education
-		const work = base.filter(m => m.type === 'work');
-		const edu = base.filter(m => m.type === 'education');
-		
-		const sortedWork = work.map((m, i) => ({
-			...m,
-			y: 350 + (i * 450) // Increased from 280
-		}));
-
-		const sortedEdu = edu.map((m, i) => ({
-			...m,
-			y: 350 + (work.length * 450) + 200 + (i * 450) // Increased from 280
-		}));
-		
-		return [...sortedWork, ...sortedEdu];
-	});
-
-	let displayHeight = $derived(isMobile 
-		? 350 + (processedMilestones.length * 450) + 500 
-		: desktopHeight
-	);
+	let scrollContainer: HTMLDivElement;
+	let scrollY = $state(0);
+	let innerHeight = $state(0);
+	let scrollHeight = $state(0);
 	
-	let workHeaderY = 180; // Moved up from 240
-	let eduHeaderY = $derived(isMobile ? 350 + (t.milestones.filter(m => m.type === 'work').length * 450) - 20 : 48 * 4);
+	let progress = $derived.by(() => {
+		if (scrollHeight <= innerHeight) return 0;
+		const totalScrollable = scrollHeight - innerHeight;
+		return Math.min(1, Math.max(0, scrollY / totalScrollable));
+	});
 
-	// Scroll tracking for normalized progress
-	let progress = $state(0);
-	let currentHead = $state(0);
+	function handleScroll() {
+		if (scrollContainer) {
+			scrollY = scrollContainer.scrollTop;
+		}
+	}
+
 	onMount(() => {
-		const handleScroll = () => {
-			const winScroll = window.scrollY;
-			const viewportHeight = window.innerHeight;
-
-			// Target offset is middle of screen (0.5)
-			const targetOffset = viewportHeight * 0.5;
-
-			// Smoothly transition the offset from 0 to targetOffset over the first 300px of scroll
-			// This prevents the "jump" at the start.
-			const entryDistance = 300;
-			const transitionFactor = Math.min(1, winScroll / entryDistance);
-			const dynamicOffset = targetOffset * transitionFactor;
-
-			currentHead = winScroll + dynamicOffset;
-
-			if (winScroll < 5) {
-				progress = 0;
-				currentHead = 0;
-			} else {
-				progress = Math.min(1, currentHead / displayHeight);
+		const handleResize = () => {
+			if (scrollContainer) {
+				innerHeight = scrollContainer.clientHeight;
+				scrollHeight = scrollContainer.scrollHeight;
 			}
 		};
-		window.addEventListener('scroll', handleScroll, { passive: true });
+		
+		window.addEventListener('resize', handleResize);
+		handleResize();
 		handleScroll();
-		return () => window.removeEventListener('scroll', handleScroll);
+		
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
 	});
 </script>
+
+<svelte:window bind:innerHeight />
 
 <svelte:head>
 	<title>{seo.cvTitle}</title>
@@ -89,45 +52,50 @@
 
 <Navbar />
 
-<main 
-	class="relative w-full bg-canvas overflow-x-hidden"
-	style="height: {displayHeight}px;"
->
-	<div class="relative w-full h-full max-w-7xl mx-auto px-12 md:px-0">
-		<LineCanvas 
-			height={displayHeight} 
-			points={processedMilestones} 
-			workHeaderY={isMobile ? workHeaderY + 25 : 160}
-			eduHeaderY={isMobile ? eduHeaderY + 25 : 160}
-			{progress}
-		/>
-		
-		<!-- Desktop Track Headers -->
-		<div class="hidden md:block absolute left-[25%] top-32 text-center -translate-x-1/2">
-			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.workHeader}</span>
-		</div>
-		<div class="hidden md:block absolute right-[25%] top-32 text-center translate-x-1/2">
-			<span class="text-xs uppercase tracking-[0.8em] opacity-60 font-medium">{t.eduHeader}</span>
-		</div>
-
-		<!-- Mobile Track Headers (Sequential) -->
-		<div class="md:hidden absolute left-10 transition-all duration-700" style="top: {workHeaderY}px">
-			<span class="text-[10px] uppercase tracking-[0.6em] opacity-60 font-bold text-accent">{t.workHeader}</span>
-		</div>
-		
-		<div class="md:hidden absolute left-10 transition-all duration-700" style="top: {eduHeaderY}px">
-			<span class="text-[10px] uppercase tracking-[0.6em] opacity-60 font-bold text-accent">{t.eduHeader}</span>
-		</div>
-
-		{#each processedMilestones as m}
-			<Milestone {...m} {currentHead} />
-		{/each}
+<main class="bg-canvas text-content selection:bg-accent selection:text-white">
+	<!-- Background Central Line -->
+	<div class="fixed left-1/2 top-0 bottom-0 w-[2px] bg-content/5 -translate-x-1/2 hidden md:block">
+		<div 
+			class="w-full bg-accent transition-all duration-300 ease-out origin-top"
+			style="height: {progress * 100}%"
+		></div>
 	</div>
 
-	<!-- Footer -->
-	<footer 
-		class="absolute bottom-12 left-0 w-full text-center"
+	<!-- Labels (Fixed Header below Navbar) -->
+	<div class="fixed top-32 left-0 w-full z-10 hidden md:block pointer-events-none">
+		<div class="max-w-7xl mx-auto grid grid-cols-[1fr_2px_1fr] w-full items-center">
+			<div class="text-right pr-16">
+				<span class="text-[10px] uppercase tracking-[0.8em] opacity-40 font-bold text-accent">{t.workHeader}</span>
+			</div>
+			<div class="w-full h-4"></div>
+			<div class="text-left pl-16">
+				<span class="text-[10px] uppercase tracking-[0.8em] opacity-40 font-bold text-accent">{t.eduHeader}</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- Snap Container -->
+	<div 
+		bind:this={scrollContainer}
+		onscroll={handleScroll}
+		class="snap-y snap-mandatory h-screen overflow-y-auto overflow-x-hidden"
 	>
-		<p class="text-[9px] uppercase tracking-[0.6em] opacity-20">{t.footer}</p>
-	</footer>
+		{#each t.milestones as m}
+			<Milestone {...m} />
+		{/each}
+
+	</div>
 </main>
+
+<style>
+	/* Hide scrollbar for Chrome, Safari and Opera */
+	.snap-y::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Hide scrollbar for IE, Edge and Firefox */
+	.snap-y {
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
+	}
+</style>
