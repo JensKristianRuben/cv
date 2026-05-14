@@ -162,7 +162,7 @@ export const translations = {
 				{
 					title: 'KOPL website',
 					category: 'Web Development',
-					description: 'Udviklet website.',
+					description: 'Udviklet hjemmeside for virksomheden. Migreret fra wordpress løsning til Sveltekit med svelte 5.',
 					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
 					image: '/assets/kopl.png',
 					link: 'https://kopl.dk/',
@@ -335,7 +335,7 @@ export const translations = {
 				{
 					title: 'KOPL website',
 					category: 'Web Development',
-					description: 'Developed website.',
+					description: 'Developed website for the company. Migrated from a WordPress solution to SvelteKit with Svelte 5.',
 					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
 					image: '/assets/kopl.png',
 					link: 'https://kopl.dk/',

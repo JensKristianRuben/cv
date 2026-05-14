@@ -16,14 +16,9 @@
 
 <Navbar />
 
-<main class="relative bg-canvas overflow-x-hidden pt-32">
+<main class="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-canvas scroll-smooth">
 	<!-- Projects List -->
 	{#each t as project, i}
 		<ProjectCard {project} index={i} {labels} />
 	{/each}
-
-	<!-- Footer -->
-	<footer class="flex h-64 items-center justify-center border-t border-content/5">
-		<p class="text-[10px] uppercase tracking-[0.8em] opacity-20">End of Portfolio</p>
-	</footer>
 </main>
