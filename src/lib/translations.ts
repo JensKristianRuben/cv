@@ -125,9 +125,18 @@ export const translations = {
 			viewCaseStudy: 'Se Case Study',
 			items: [
 				{
+					title: 'APIX',
+					category: 'AI & Enterprise Search',
+					description: 'Hovedprojekt for ECIT/INVIXO. En applikation udviklet til at søge på tværs af virksomhedens mange dattervirksomheder. Projektet er bygget med en "AI-first" tilgang for at teste grænserne for en autonom udviklingspipeline med "human-in-the-loop". Der er gjort omfattende brug af "skills" for at sikre, at AI-agenter nemt kan skalere og videreudvikle projektet.',
+					gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+					image: '/assets/apix-logo.svg',
+					animationType: 'zoom-in',
+					hideButton: true
+				},
+				{
 					title: 'Weeks Left',
 					category: 'Life Visualization',
-					description: 'Et tankevækkende værktøj der visualiserer din resterende tid i uger. Projektet udforsker memento mori-konceptet gennem et minimalistisk interface, der hjælper dig med at perspektivere dit liv og dine prioriteter.',
+					description: 'En visualisering af din tid tilbage vist i uger. Baseret på Danmarks Statistiks data om middellevetid.',
 					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
 					image: '/assets/timeleft.png',
 					link: 'https://weeksleft-five.vercel.app/',
@@ -297,9 +306,18 @@ export const translations = {
 			viewCaseStudy: 'View Case Study',
 			items: [
 				{
+					title: 'APIX',
+					category: 'AI & Enterprise Search',
+					description: 'Core project for ECIT/INVIXO. An application developed to search across the company\'s many subsidiaries. The project was built with an "AI-first" approach to test the boundaries of an autonomous development pipeline with "human-in-the-loop". Extensive use of "skills" ensures that AI agents can easily scale and continue developing the project.',
+					gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+					image: '/assets/apix-logo.svg',
+					animationType: 'zoom-in',
+					hideButton: true
+				},
+				{
 					title: 'Weeks Left',
 					category: 'Life Visualization',
-					description: 'A thought-provoking tool that visualizes your remaining time in weeks. This project explores the memento mori concept through a minimalist interface, helping you gain perspective on your life and priorities.',
+					description: 'A visualization of your remaining time shown in weeks. Based on Statistics Denmark\'s data on average life expectancy.',
 					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
 					image: '/assets/timeleft.png',
 					link: 'https://weeksleft-five.vercel.app/',

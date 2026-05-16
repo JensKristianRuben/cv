@@ -116,7 +116,7 @@
 					<img 
 						src={project.image} 
 						alt={project.title}
-						class="h-full w-full object-contain p-4 md:p-8"
+						class="h-full w-full object-contain p-4 md:p-8 {project.title === 'APIX' ? 'scale-75' : ''}"
 					/>
 				{:else}
 					<div class="h-full w-full bg-content/10 flex items-center justify-center">
