@@ -8,42 +8,41 @@
 	let t = $derived(translations[lang.current].cv);
 	let seo = $derived(translations[lang.current].seo);
 	
-	let scrollContainer: HTMLDivElement;
 	let scrollY = $state(0);
 	let innerHeight = $state(0);
 	let scrollHeight = $state(0);
 	
 	let progress = $derived.by(() => {
-		if (scrollHeight <= innerHeight) return 0;
 		const totalScrollable = scrollHeight - innerHeight;
+		if (totalScrollable <= 0) return 0;
 		return Math.min(1, Math.max(0, scrollY / totalScrollable));
 	});
 
-	function handleScroll() {
-		if (scrollContainer) {
-			scrollY = scrollContainer.scrollTop;
-		}
-	}
-
 	onMount(() => {
-		const handleResize = () => {
-			if (scrollContainer) {
-				innerHeight = scrollContainer.clientHeight;
-				scrollHeight = scrollContainer.scrollHeight;
-			}
+		const handleScroll = () => {
+			scrollY = window.scrollY;
 		};
 		
+		const handleResize = () => {
+			innerHeight = window.innerHeight;
+			scrollHeight = document.documentElement.scrollHeight;
+		};
+		
+		window.addEventListener('scroll', handleScroll);
 		window.addEventListener('resize', handleResize);
+		
+		// Initial values
 		handleResize();
 		handleScroll();
 		
 		return () => {
+			window.removeEventListener('scroll', handleScroll);
 			window.removeEventListener('resize', handleResize);
 		};
 	});
 </script>
 
-<svelte:window bind:innerHeight />
+<svelte:window />
 
 <svelte:head>
 	<title>{seo.cvTitle}</title>
@@ -52,17 +51,17 @@
 
 <Navbar />
 
-<main class="bg-canvas text-content selection:bg-accent selection:text-white">
+<main class="relative bg-canvas text-content selection:bg-accent selection:text-white min-h-screen pb-20">
 	<!-- Background Central Line -->
-	<div class="fixed left-1/2 top-0 bottom-0 w-[2px] bg-content/5 -translate-x-1/2 hidden md:block">
+	<div class="fixed left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-content/5 -translate-x-1/2 z-0">
 		<div 
-			class="w-full bg-accent transition-all duration-300 ease-out origin-top"
+			class="w-full bg-accent transition-all duration-150 ease-out origin-top"
 			style="height: {progress * 100}%"
 		></div>
 	</div>
 
-	<!-- Labels (Fixed Header below Navbar) -->
-	<div class="fixed top-32 left-0 w-full z-10 hidden md:block pointer-events-none">
+	<!-- Labels (Scrollable Header) -->
+	<div class="absolute top-24 md:top-32 left-0 w-full z-10 hidden md:block pointer-events-none">
 		<div class="max-w-7xl mx-auto grid grid-cols-[1fr_2px_1fr] w-full items-center">
 			<div class="text-right pr-16">
 				<span class="text-[10px] uppercase tracking-[0.8em] opacity-40 font-bold text-accent">{t.workHeader}</span>
@@ -74,28 +73,13 @@
 		</div>
 	</div>
 
-	<!-- Snap Container -->
-	<div 
-		bind:this={scrollContainer}
-		onscroll={handleScroll}
-		class="snap-y snap-mandatory h-screen overflow-y-auto overflow-x-hidden"
-	>
+	<!-- Container -->
+	<div class="relative pt-32">
 		{#each t.milestones as m}
 			<Milestone {...m} />
 		{/each}
-
 	</div>
 </main>
 
 <style>
-	/* Hide scrollbar for Chrome, Safari and Opera */
-	.snap-y::-webkit-scrollbar {
-		display: none;
-	}
-
-	/* Hide scrollbar for IE, Edge and Firefox */
-	.snap-y {
-		-ms-overflow-style: none;  /* IE and Edge */
-		scrollbar-width: none;  /* Firefox */
-	}
 </style>
