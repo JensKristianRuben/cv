@@ -10,3 +10,7 @@ jobs:
     jobname:
         timeout-minutes: 60
         runs-on: ubuntu-latest
+
+        steps:
+            - name: test besked
+              run: echo "Dette flow blev sat i gang af ${{github.actor}} og kører på branchen ${{github.ref}}" 
