@@ -7,10 +7,24 @@ on:
         branches: [main, master]
 
 jobs:
-    jobname:
+    playwright:
         timeout-minutes: 60
         runs-on: ubuntu-latest
 
         steps:
-            - name: test besked
-              run: echo "Dette flow blev sat i gang af ${{github.actor}} og kører på branchen ${{github.ref}}" 
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: setup node
+              uses: actions/setup-node@v4
+              with:
+                node-version: '20'
+                
+            - name: Install packages
+              run: npm install    
+
+            - name: Install Playwright browsers
+              run: npm install playwright --with-deps  
+
+            - name: Run Playwright tests
+              run: npx playwright test 
