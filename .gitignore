@@ -29,3 +29,7 @@ vite.config.ts.timestamp-*
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+
+# tasks i want to do
+.tasks
