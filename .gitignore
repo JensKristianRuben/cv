@@ -33,3 +33,6 @@ vite.config.ts.timestamp-*
 
 # tasks i want to do
 .tasks
+
+# Secrets used for github actions
+.secrets
