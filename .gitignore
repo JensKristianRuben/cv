@@ -36,3 +36,6 @@ vite.config.ts.timestamp-*
 
 # Secrets used for github actions
 .secrets
+
+# temp terraform gitignore before going for remote backend storing
+terraform
