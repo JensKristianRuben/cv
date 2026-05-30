@@ -16,9 +16,18 @@
 
 <Navbar />
 
-<main class="h-screen w-full overflow-y-auto overflow-x-hidden snap-y snap-mandatory bg-canvas scroll-smooth">
+<main class="w-full min-h-screen bg-canvas selection:bg-content selection:text-canvas">
 	<!-- Projects List -->
-	{#each t as project, i}
-		<ProjectCard {project} index={i} {labels} />
-	{/each}
+	<div class="flex flex-col w-full">
+		{#each t as project, i}
+			<ProjectCard {project} index={i} {labels} />
+		{/each}
+	</div>
+
+	<!-- Simple Footer -->
+	<footer class="py-24 px-6 text-center">
+		<a href="/contact" class="text-sm uppercase tracking-[0.5em] opacity-40 hover:opacity-100 transition-opacity">
+			Start a conversation
+		</a>
+	</footer>
 </main>

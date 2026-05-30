@@ -8,9 +8,7 @@ export const translations = {
 			projectsTitle: 'Projekter | Portfolio',
 			projectsDesc: 'Udforsk mine softwareprojekter, herunder Weeks Left, Clockwise og simulationer udviklet med Svelte og WebSockets.',
 			contactTitle: 'Kontakt | Jens Kristian Ruben',
-			contactDesc: 'Kontakt mig for samarbejde eller spørgsmål. Find mine sociale profiler og direkte mail her.',
-			detteProjektTitle: 'Dette Projekt | DevOps i Praksis',
-			detteProjektDesc: 'En visuel gennemgang af de DevOps-elementer der driver denne portefølje, herunder Docker, CI/CD og automatisering.'
+			contactDesc: 'Kontakt mig for samarbejde eller spørgsmål. Find mine sociale profiler og direkte mail her.'
 		},
 		nav: {
 			cv: 'CV',
@@ -127,57 +125,40 @@ export const translations = {
 			viewCaseStudy: 'Se Case Study',
 			items: [
 				{
-					title: 'APIX',
-					category: 'AI & Enterprise Search',
+					title: 'APIX - Hovedprojekt',
 					description: 'Hovedprojekt for ECIT/INVIXO. En applikation udviklet til at søge på tværs af virksomhedens mange dattervirksomheder. Projektet er bygget med en "AI-first" tilgang for at teste grænserne for en autonom udviklingspipeline med "human-in-the-loop". Der er gjort omfattende brug af "skills" for at sikre, at AI-agenter nemt kan skalere og videreudvikle projektet.',
-					gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
 					image: '/assets/apix-logo.svg',
-					animationType: 'zoom-in',
 					hideButton: true
 				},
 				{
 					title: 'Weeks Left',
-					category: 'Life Visualization',
 					description: 'En visualisering af din tid tilbage vist i uger. Baseret på Danmarks Statistiks data om middellevetid.',
-					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
 					image: '/assets/timeleft.png',
-					link: 'https://weeksleft-five.vercel.app/',
-					animationType: 'fade-in'
+					link: 'https://weeksleft-five.vercel.app/'
 				},
 				{
 					title: 'Clockwise',
-					category: 'Real-time Gaming',
 					description: 'Dette projekt er en øvelse i at bruge WebSockets til at sende data til flere brugere samtidigt og skabe et live dataflow. Resultatet er et konkurrencepræget spil designet til unge mennesker, der har svært ved at aflæse et analogt ur, men elsker udfordringer. Teknisk demonstrerer det sikker og hurtig tovejs-kommunikation mellem server og klient.',
-					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
 					image: '/assets/clockwise.png',
-					link: 'https://clockwise-lc5r.onrender.com/',
-					animationType: 'slide-left'
+					link: 'https://clockwise-lc5r.onrender.com/'
 				},
 				{
 					title: 'Opinion Boids',
-					category: 'Social Simulation',
 					description: 'Jeg synes den klassiske boids simulation er ret cool, og valgte derfor at tage udgangspunkt i den til mit algoritme eksamensprojekt. Projektet undersøger social polarisering og ekkokamre ved at visualisere, hvordan radikale holdninger ændrer flokadfærd. Teknisk er løsningen optimeret med Spatial Hashing, hvilket reducerer kompleksiteten fra O(n²) til O(n) og muliggør tusindvis af agenter i realtid.',
-					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
 					image: '/assets/opinion-boids.png',
-					link: 'https://opinions-boids.vercel.app/',
-					animationType: 'slide-right'
+					link: 'https://opinions-boids.vercel.app/'
 				},				{
 					title: 'Medarbejderrejsen',
-					category: 'Automation',
 					description: 'Integration af DGI Byens HR- og IDP-systemer med fokus på at hjemtage ejerskab og optimere governance. Ved hjælp af Azure Logic Apps er der skabt en modulær low-code løsning, der automatiserer medarbejderens livscyklus fra preboarding til offboarding. Sikkerheden er vægtet højt gennem implementering af Managed Identities og RBAC efter least-privilege-princippet.',
 					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
 					image: '/assets/logic-apps-flow.svg',
-					animationType: 'zoom-in',
 					hideButton: true
 				},
 				{
 					title: 'KOPL website',
-					category: 'Web Development',
 					description: 'Udviklet hjemmeside for virksomheden. Migreret fra wordpress løsning til Sveltekit med svelte 5.',
-					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
 					image: '/assets/kopl.png',
-					link: 'https://kopl.dk/',
-					animationType: '3d-unfold'
+					link: 'https://kopl.dk/'
 				}
 			]
 		}
@@ -191,9 +172,7 @@ export const translations = {
 			projectsTitle: 'Projects | Portfolio',
 			projectsDesc: 'Explore my software projects, including Weeks Left, Clockwise, and simulations built with Svelte and WebSockets.',
 			contactTitle: 'Contact | Jens Kristian Ruben',
-			contactDesc: 'Get in touch for collaborations or inquiries. Find my social profiles and direct email here.',
-			detteProjektTitle: 'This Project | DevOps in Practice',
-			detteProjektDesc: 'A visual walkthrough of the DevOps elements driving this portfolio, including Docker, CI/CD, and automation.'
+			contactDesc: 'Get in touch for collaborations or inquiries. Find my social profiles and direct email here.'
 		},
 		nav: {
 			cv: 'CV',
@@ -252,7 +231,7 @@ export const translations = {
 					type: 'work',
 					date: 'Feb. 2023 — Jul. 2024',
 					title: 'Sign Language Interpreter',
-					summary: 'Tegnsprogstolken.dk',
+					summary: 'Tegnoprogstolken.dk',
 					details: 'Interpreted everything from medical appointments and education to the World Karting Championship.'
 				},
 				{
@@ -310,58 +289,41 @@ export const translations = {
 			viewCaseStudy: 'View Case Study',
 			items: [
 				{
-					title: 'APIX',
-					category: 'AI & Enterprise Search',
+					title: 'APIX - Hovedprojekt',
 					description: 'Core project for ECIT/INVIXO. An application developed to search across the company\'s many subsidiaries. The project was built with an "AI-first" approach to test the boundaries of an autonomous development pipeline with "human-in-the-loop". Extensive use of "skills" ensures that AI agents can easily scale and continue developing the project.',
-					gradient: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
 					image: '/assets/apix-logo.svg',
-					animationType: 'zoom-in',
 					hideButton: true
 				},
 				{
 					title: 'Weeks Left',
-					category: 'Life Visualization',
 					description: 'A visualization of your remaining time shown in weeks. Based on Statistics Denmark\'s data on average life expectancy.',
-					gradient: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
 					image: '/assets/timeleft.png',
-					link: 'https://weeksleft-five.vercel.app/',
-					animationType: 'fade-in'
+					link: 'https://weeksleft-five.vercel.app/'
 				},
 				{
 					title: 'Clockwise',
-					category: 'Real-time Gaming',
 					description: 'This project is an exercise in using WebSockets to broadcast data to multiple users simultaneously, creating a live data flow. I developed a competitive clock game for young people who struggle with analog clocks but love competition. Technically, it demonstrates fast, secure two-way communication between server and client.',
-					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
 					image: '/assets/clockwise.png',
-					link: 'https://clockwise-lc5r.onrender.com/',
-					animationType: 'slide-left'
+					link: 'https://clockwise-lc5r.onrender.com/'
 				},
 				{
 					title: 'Opinion Boids',
-					category: 'Social Simulation',
 					description: 'I find the classic boids simulation quite cool, so I chose it as the starting point for my algorithm exam project. The project explores social polarization and echo chambers by visualizing how radical opinions alter flock behavior. Technically, the solution is optimized with Spatial Hashing, reducing complexity from O(n²) to O(n) and enabling thousands of real-time agents.',
-					gradient: 'linear-gradient(135deg, #0f172a 0%, #334155 100%)',
 					image: '/assets/opinion-boids.png',
-					link: 'https://opinions-boids.vercel.app/',
-					animationType: 'slide-right'
+					link: 'https://opinions-boids.vercel.app/'
 				},
 				{
 					title: 'The Employee Journey',
-					category: 'Automation',
 					description: 'Integration of HR and IDP systems with a focus on internal ownership and optimized governance. Developed using Azure Logic Apps, this modular low-code solution automates the employee lifecycle from preboarding to offboarding. Security is prioritized through Managed Identities and RBAC following least-privilege principles.',
 					gradient: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)',
 					image: '/assets/logic-apps-flow.svg',
-					animationType: 'zoom-in',
 					hideButton: true
 				},
 				{
 					title: 'KOPL website',
-					category: 'Web Development',
 					description: 'Developed website for the company. Migrated from a WordPress solution to SvelteKit with Svelte 5.',
-					gradient: 'linear-gradient(135deg, #064e3b 0%, #065f46 100%)',
 					image: '/assets/kopl.png',
-					link: 'https://kopl.dk/',
-					animationType: '3d-unfold'
+					link: 'https://kopl.dk/'
 				}
 			]
 		}
