@@ -123,11 +123,6 @@
 						<span class="text-[10px] uppercase tracking-widest opacity-20">No Image</span>
 					</div>
 				{/if}
-				
-				<!-- Project Number Overlay -->
-				<div class="absolute bottom-4 left-4 text-[10px] uppercase tracking-[0.5em] opacity-30">
-					Project // 0{index + 1}
-				</div>
 			</div>
 		</div>
 

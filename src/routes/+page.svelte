@@ -52,11 +52,6 @@
 			{/each}
 		{/if}
 	</div>
-
-	<!-- Background subtle text -->
-	<div class="absolute bottom-12 left-12 opacity-10 pointer-events-none">
-		<p class="text-[10px] uppercase tracking-[1em]">Portfolio // 2026</p>
-	</div>
 </main>
 
 <style>

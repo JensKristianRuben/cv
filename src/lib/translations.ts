@@ -8,7 +8,9 @@ export const translations = {
 			projectsTitle: 'Projekter | Portfolio',
 			projectsDesc: 'Udforsk mine softwareprojekter, herunder Weeks Left, Clockwise og simulationer udviklet med Svelte og WebSockets.',
 			contactTitle: 'Kontakt | Jens Kristian Ruben',
-			contactDesc: 'Kontakt mig for samarbejde eller spørgsmål. Find mine sociale profiler og direkte mail her.'
+			contactDesc: 'Kontakt mig for samarbejde eller spørgsmål. Find mine sociale profiler og direkte mail her.',
+			detteProjektTitle: 'Dette Projekt | DevOps i Praksis',
+			detteProjektDesc: 'En visuel gennemgang af de DevOps-elementer der driver denne portefølje, herunder Docker, CI/CD og automatisering.'
 		},
 		nav: {
 			cv: 'CV',
@@ -189,7 +191,9 @@ export const translations = {
 			projectsTitle: 'Projects | Portfolio',
 			projectsDesc: 'Explore my software projects, including Weeks Left, Clockwise, and simulations built with Svelte and WebSockets.',
 			contactTitle: 'Contact | Jens Kristian Ruben',
-			contactDesc: 'Get in touch for collaborations or inquiries. Find my social profiles and direct email here.'
+			contactDesc: 'Get in touch for collaborations or inquiries. Find my social profiles and direct email here.',
+			detteProjektTitle: 'This Project | DevOps in Practice',
+			detteProjektDesc: 'A visual walkthrough of the DevOps elements driving this portfolio, including Docker, CI/CD, and automation.'
 		},
 		nav: {
 			cv: 'CV',
