@@ -23,11 +23,4 @@
 			<ProjectCard {project} index={i} {labels} />
 		{/each}
 	</div>
-
-	<!-- Simple Footer -->
-	<footer class="py-24 px-6 text-center">
-		<a href="/contact" class="text-sm uppercase tracking-[0.5em] opacity-40 hover:opacity-100 transition-opacity">
-			Start a conversation
-		</a>
-	</footer>
 </main>

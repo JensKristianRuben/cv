@@ -15,8 +15,11 @@
 	onNavigate((navigation) => {
 		if (!document.startViewTransition) return;
 
-		const fromIndex = pageOrder.indexOf(navigation.from?.url.pathname || '');
-		const toIndex = pageOrder.indexOf(navigation.to?.url.pathname || '');
+		const fromPath = (navigation.from?.url.pathname || '').replace(/\/$/, '') || '/';
+		const toPath = (navigation.to?.url.pathname || '').replace(/\/$/, '') || '/';
+
+		const fromIndex = pageOrder.indexOf(fromPath);
+		const toIndex = pageOrder.indexOf(toPath);
 		
 		const isBackwards = fromIndex > toIndex;
 		if (isBackwards) {
