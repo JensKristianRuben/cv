@@ -1,42 +1,27 @@
-# sv
+# CV Site
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is my personal CV site, created to showcase the projects I have been working on and the places I have been employed.
 
-## Creating a project
+## The site itself
 
-If you're seeing this, you've probably already done this step. Congrats!
+I will also use this site to practice my skills within DevOps technologies and document that process.
 
-```sh
-# create a new project
-npx sv create my-app
+## How to
+
+**Requirements:**
+
+* npm installed
+* Node.js installed
+
+Start the system by running the following command:
+
+firsttime:
+
+```powershell
+npm install
 ```
+after that use:
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.15.3 create --template minimal --types ts --add tailwindcss="plugins:none" --no-download-check --install npm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```powershell
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
