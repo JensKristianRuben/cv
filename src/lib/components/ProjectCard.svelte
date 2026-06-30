@@ -36,7 +36,7 @@
 				{project.title}
 			</h2>
 			
-			<p class="mb-10 text-sm leading-relaxed tracking-wider opacity-60 max-w-md font-light">
+			<p class="mb-10 text-sm leading-loose tracking-widest opacity-60 max-w-md font-light">
 				{project.description}
 			</p>
 			

@@ -131,6 +131,12 @@ export const translations = {
 					hideButton: true
 				},
 				{
+					title: 'awayinvault',
+					description: 'Et tidligere studieprojekt, jeg arbejder videre på. I sin simple forstand er det en traditionel password vault, men jeg bruger det som en indgang til at lege med kryptering og forstå de fundamentale sikkerhedsprincipper, når man arbejder over nettet. Jeg vil gerne udvikle et CLI, man kan bruge lokalt og pudse sine agenter på, men også tænke ind, hvordan det kan bruges som et remote sted at opbevare sine variabler, så vi på tværs af et team kan have vores nøgler et samlet sted.',
+					image: '/assets/awayinvault-logo.png',
+					link: 'https://github.com/JensKristianRuben/AwayInVault.git'
+				},
+				{
 					title: 'Weeks Left',
 					description: 'En visualisering af din tid tilbage vist i uger. Baseret på Danmarks Statistiks data om middellevetid.',
 					image: '/assets/timeleft.png',
@@ -292,6 +298,12 @@ export const translations = {
 					title: 'APIX - Hovedprojekt',
 					description: 'Core project for ECIT/INVIXO. An application developed to search across the company\'s many subsidiaries. The project was built with an "AI-first" approach to test the boundaries of an autonomous development pipeline with "human-in-the-loop". Extensive use of "skills" ensures that AI agents can easily scale and continue developing the project.',
 					image: '/assets/apix-logo.svg',
+					hideButton: true
+				},
+				{
+					title: 'awayinvault',
+					description: 'A former student project that I am continuing to develop. In its simplest sense, it is a traditional password vault, but I use it as a gateway to play with encryption and understand fundamental security principles when working over the network. I want to develop a CLI that can be used locally and to test agents on, while also considering how to use it as a remote place to store variables so that across a team we can have our keys in a unified place.',
+					image: '/assets/awayinvault-logo.svg',
 					hideButton: true
 				},
 				{
