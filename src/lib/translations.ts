@@ -25,7 +25,7 @@ export const translations = {
 					x: 25,
 					alignment: 'right',
 					type: 'work',
-					date: 'Jun. 2025 — Nu',
+					date: 'Jun. 2025 — Jun. 2026',
 					title: 'Studentermedhjælper',
 					summary: 'KOPL',
 					details: 'Migration fra WordPress til Svelte 5. Udvikling af interne værktøjer til at understøtte processen samt implementering af AI-agenter.'
@@ -35,7 +35,7 @@ export const translations = {
 					x: 25,
 					alignment: 'right',
 					type: 'work',
-					date: 'Maj 2025 — Nu',
+					date: 'Maj 2025 — Jun. 2026',
 					title: 'Studentermedhjælper',
 					summary: 'DGI Byen',
 					details: 'Automatisering af medarbejdercyklussen fra preboarding til on- og offboarding. Integration af HR- og IDP-systemer. Arbejde med Microsoft Azure-suiten, SSO-implementering og udrulning af phishing-simuleringer.'
@@ -196,7 +196,7 @@ export const translations = {
 					x: 25,
 					alignment: 'right',
 					type: 'work',
-					date: 'Jun. 2025 — Present',
+					date: 'Jun. 2025 — Jun. 2026',
 					title: 'Student Assistant',
 					summary: 'KOPL',
 					details: 'Migration from WordPress to Svelte 5. Developed internal tools to support the process. Implementation of AI agents.'
@@ -206,7 +206,7 @@ export const translations = {
 					x: 25,
 					alignment: 'right',
 					type: 'work',
-					date: 'May 2025 — Present',
+					date: 'May 2025 — Jun. 2026',
 					title: 'Student Assistant',
 					summary: 'DGI Byen',
 					details: 'Automation of the employee lifecycle from Preboarding to on- and offboarding. Integration of HR systems and IDP systems. Worked with the Microsoft Azure suite, SSO implementation, and rolled out Phishing simulations.'
