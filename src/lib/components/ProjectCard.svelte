@@ -41,18 +41,30 @@
 			</p>
 			
 			{#if !project.hideButton}
-				<div class="flex items-center">
+				<div class="flex items-center gap-10">
 					{#if project.link}
-						<a 
-							href={project.link} 
-							target="_blank" 
+						<a
+							href={project.link}
+							target="_blank"
 							rel="noopener noreferrer"
 							class="group/link relative inline-flex items-center text-[10px] uppercase tracking-[0.5em] transition-all"
 						>
 							<span class="relative z-10">{labels.viewProject}</span>
 							<span class="absolute -bottom-2 left-0 h-px w-0 bg-content transition-all duration-300 group-hover/link:w-full"></span>
 						</a>
-					{:else}
+					{/if}
+					{#if project.githubLink}
+						<a
+							href={project.githubLink}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="group/link relative inline-flex items-center text-[10px] uppercase tracking-[0.5em] transition-all"
+						>
+							<span class="relative z-10">GitHub</span>
+							<span class="absolute -bottom-2 left-0 h-px w-0 bg-content transition-all duration-300 group-hover/link:w-full"></span>
+						</a>
+					{/if}
+					{#if !project.link && !project.githubLink}
 						<span class="text-[10px] uppercase tracking-[0.5em] opacity-30 italic">
 							{labels.viewCaseStudy}
 						</span>
